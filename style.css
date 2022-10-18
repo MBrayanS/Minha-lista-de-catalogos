@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+.description__btn-close:hover, .catalog__button:hover, .add-movie button:hover {
+    background-color: var(--hex3);
+    border: 1px solid var(--hex7);
+    font-size: 25px;
+    transition: all 0.8s;
+}
+
+.description__btn-close:active, .catalog__button:active, .add-movie button:active {
+    background-color: var(--hex5);
+    border: 1px solid var(--hex4);
+    transition: all 0.3s;
+}
+
+:root {
+    --hex1: #0F4B80;
+    --hex2: #11538C;
+    --hex3: #1878CC;
+    --hex4: #0C3C66;
+    --hex5: #082640;
+    --hex6: #051524;
+    --hex7: #e1ebf5;
+    --hex8: #99a5b3;
+}
+
+body {
+    font-family: 'Concert One', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.body--scroll-disable {
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+    min-height: 100px;
+    background-color: var(--hex4);
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    width: 90vw;
+    min-width: 230px;
+    height: 100%;
+    box-shadow: 0px 0px 15px 4px var(--hex5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page__top {
+    width: 103%;
+    height: 15vw;
+    background-color: var(--hex1);
+    box-shadow: 0px 0px 15px 4px var(--hex5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    border-radius: 0  0 10px 10px;
+    text-align: center;
+}
+
+.page__top p {
+    color: var(--hex7);
+    text-transform: uppercase;
+    font-size: 70px;
+    margin: 0;
+}
+
+.page__bottom {
+    width: 103%;
+    height: 5vw;
+    background-color: var(--hex1);
+    box-shadow: 0px 0px 15px 4px var(--hex5);
+    border-radius: 10px 10px 0 0;
+    margin-top: 80px;
+}
+
+.add-movie {
+    height: 150px;
+    display: flex;
+    margin-top: 50px;
+}
+
+.add-movie button {
+    width: 250px;
+    height: 60px;
+    background-color: var(--hex3);
+    box-shadow: 3px 2px 15px 2px var(--hex5);
+    border: 3px solid var(--hex5);
+    border-radius: 10px;
+    margin: auto;
+    font-size: 30px;
+    color: var(--hex7)
+}
+
+.add-movie button:hover {
+    font-size: 30px;
+}
+
+.page__movie {
+    width: 76vw;
+    min-width: 220px;
+    height: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.movie__catalog {
+    width: 220px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.movie__catalog:hover {
+    transform: scale(1.1);
+}
+
+.catalog__img {
+    width: 220px;
+    height: 300px;
+    box-shadow: 0px 0px 15px 10px var(--hex5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.catalog__img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.catalog__img--blur {
+    filter: blur(2.5px);
+    transition: all 0.4s;
+}
+
+.catalog__bottom {
+    width: 101%;
+    height: 100%;
+    background-color: var(--hex4);
+    box-shadow: 0px 0px 10px 8px var(--hex5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    border-radius: 0 0 10px 10px;
+    margin-top: -30px;
+}
+
+.catalog__bottom__title {
+    max-width: 190px;
+    height: max-content;
+    color: var(--hex7);
+    margin: 5px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.catalog__bottom__stars {
+    color: var(--hex7);
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.catalog__bottom span {
+    color: var(--hex8);
+    font-size: 14px;
+}
+
+.catalog__button {
+    display: none;
+}
+
+.catalog__button--visible {
+    width: 130px;
+    height: 50px;
+    background-color: var(--hex2);
+    box-shadow: 0px 0px 15px 5px var(--hex4);
+    border: 1px solid var(--hex4);
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    margin: auto;
+    font-size: 22px;
+    font-family: 'Concert One', cursive;
+    text-transform: uppercase;
+    color: var(--hex7);
+    transition: all 0.5s;
+}
+
+.page-background {
+    position: fixed;
+    opacity: 0%;
+    transition: all 0.4s;
+}
+
+.page-background--visible {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    overflow: overlay;
+    transition: all 0.4s;
+    opacity: 100%;
+}
+
+.btn-close:hover {
+    font-size: 20px;
+    transform: scale(2.3);
+    transition: all 0.2s;
+}
+
+.catalog-expanded {
+    width: 80vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+    margin-right: 20px;
+}
+
+.catalog-expanded__top {
+    width: 100%;
+    max-width: 630px;
+    height: 100%;
+    max-height: 350px;
+    background: black;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-expanded__top img {
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0px 0px 15px 10px var(--hex4);
+    opacity: 80%;
+}
+
+.catalog-expanded__top button {
+    width: 20px;
+    height: 20px;
+    background: none;
+    box-shadow: 0px 0px 4px 0.5px var(--hex7);
+    color: var(--hex7);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-self: flex-end;
+    margin: 20px;
+    position: absolute;
+    transform: scale(2);
+    font-size: 18px;
+    font-family: 'Concert One', cursive;
+    filter: brightness(1);
+}
+
+.top__title {
+    max-width: 330px;
+    height: 45vw;
+    display: flex;
+    flex-direction: column-reverse;
+    max-height: 350px;
+    margin-left: 30px;
+    color: var(--hex7);
+    position: absolute;
+}
+
+.top__title h1 {
+    font-size: 35px;
+    text-shadow: 0px 0px 10px var(--hex6);
+}
+
+.catalog-expanded__description {
+    width: 100%;
+    max-width: 635px;
+    height: max-content;
+    background-color: var(--hex5);
+    box-shadow: 0px 2px 10px 10px var(--hex4);
+    border-radius: 5px 5px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.description__overview {
+    height: max-content;
+    color: var(--hex8);
+    background-color: var(--hex6);
+    box-shadow: 0px 2px 10px 10px var(--hex6);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 3rem 2rem;
+    font-size: 20px;
+}
+
+.description__overview span {
+    font-size: 30px;
+}
+
+.description__overview p {
+    text-align: justify;
+    text-indent: 15px;
+}
+
+.description__info {
+    height: max-content;
+    color: var(--hex8);
+    background-color: var(--hex6);
+    box-shadow: 0px 2px 10px 10px var(--hex6);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 0 2rem 2rem;
+    font-size: 18px;
+}
+
+.description__info h1 {
+    font-size: 30px;
+}
+
+.description__info p {
+    margin: 5px 0 20px 0px;
+}
+
+.description__info span {
+    font-size: 20px;
+    margin: 0;
+}
+
+@media screen and (max-width: 1270px) {
+    .page__movie {
+        width: 725px;
+    }
+}
+
+@media screen and (max-width: 950px) {  
+    .page__top p {
+        font-size: 50px;
+    }
+ 
+    .page__movie {
+        width: 475px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .page {
+        width: 80vw;
+    }
+
+    .page__top p {
+        font-size: 20px;
+    }
+
+    .page__movie {
+        width: 220px;
+    }
+
+    .top__title h1 {
+        font-size: 30px;
+    }
+
+    .description__overview, .description__info {
+        padding: 0.5rem;
+        margin: 1.5rem 1rem
+    }
+
+    .description__info {
+        margin: 0 1rem 1rem;
+    }
+
+    .description__overview span, .description__info h1{
+        font-size: 25px;
+    }
+
+    .description__info span, .description__overview p{
+        font-size: 15px;
+    }
+
+    .description__info p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .top__title h1 {
+        font-size: 25px;
+    }
+
+    .description__overview span, .description__info h1{
+        font-size: 18px;
+    }
+
+    .description__info span, .description__overview p{
+        font-size: 12px;
+    }
+
+    .description__info p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .top__title h1 {
+        max-width: 200px;
+        font-size: 20px;
+    }
+
+    .description__overview span, .description__info h1{
+        font-size: 14px;
+    }
+
+    .description__info span, .description__overview p{
+        font-size: 10px;
+    }
+
+    .description__info p {
+        font-size: 8px;
+    }
+}
