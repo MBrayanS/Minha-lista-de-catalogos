@@ -2,26 +2,45 @@ import dataCatalogs from './list-movie.js'
 
 let divCatalog = document.querySelector('.page__movie')
 
-setTimeout(()=>{
-    updateListCatalogs()
-    sweepElementCatalogs()
-},150)
+updateListCatalogs()
 
 function updateListCatalogs(){
-    let listCatalogs = dataCatalogs.returnListCatalogs()
-
+    let listIdCatalogs = dataCatalogs.returnListIdCatalogs()
+    let nMovies = listIdCatalogs.length
+    let updateList = []
+    
+    
+    for( let catalogId of listIdCatalogs ){
+        let catalog = dataCatalogs.returnCatalog(catalogId)
+        if(!document.querySelector(`#${catalogId}`)){
+            if(catalog) updateList.push(catalog)
+        }else {
+            updateList.push(catalog)
+            nMovies--
+        }
+    }
+    
     divCatalog.innerHTML = ''
 
-    for( let movieId in listCatalogs ){
-        addCatalogsMovie(listCatalogs[movieId])
+    for(let catalog of updateList){
+        addCatalogsMovie(catalog)
+    }
+
+    sweepElementCatalogs()
+
+    if(nMovies > 1){
+        setTimeout(updateListCatalogs,1)
+    }else{
+        setTimeout(updateListCatalogs,10000)
+        console.log('Update list')
     }
 }
 
 function addCatalogsMovie(catalog){
     divCatalog.innerHTML += `
-    <div class='movie__catalog'>
+    <div class='movie__catalog' id='${catalog.catalogId}'>
         <div class='catalog__img'>
-            <img id='${catalog.movieId}' src='${catalog.poster}' alt='${catalog.title}'>
+            <img id='img_${catalog.catalogId}' src='${catalog.poster}' alt='${catalog.title}'>
             <button class='catalog__button'>Ver mais</button>
         </div>
         <div class='catalog__bottom'>
@@ -61,8 +80,8 @@ function handleOutCatalog(catalog){
 }
 
 function handleClickButton( catalog ){
-    let movieId = catalog.querySelector('img').id
-    let movie = dataCatalogs.returnCatalog(movieId)
+    let catalogId = catalog.querySelector('img').id
+    let movie = dataCatalogs.returnCatalog(catalogId)
 
     catalogExpanded(movie)
 }
@@ -104,19 +123,3 @@ function catalogExpandedClose(){
     document.body.classList.remove('body--scroll-disable')
     document.querySelector('.page-background').innerHTML = ''
 }
-
-
-
-
-
-
-
-
-
-function random(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-
