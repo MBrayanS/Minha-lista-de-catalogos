@@ -2,41 +2,40 @@ import dataCatalogs from './list-movie.js'
 
 let divCatalog = document.querySelector('.page__movie')
 
-updateListCatalogs()
+checkListCatalogs()
 
-function updateListCatalogs(){
+function checkListCatalogs(){
     let listIdCatalogs = dataCatalogs.returnListIdCatalogs()
-    let nMovies = listIdCatalogs.length
-    let updateList = []
+    let nCatalogNotFound = 0
+    let addCatalogsList = []
     
-    
-    for( let catalogId of listIdCatalogs ){
-        let catalog = dataCatalogs.returnCatalog(catalogId)
-        if(!document.querySelector(`#${catalogId}`)){
-            if(catalog) updateList.push(catalog)
-        }else {
-            updateList.push(catalog)
-            nMovies--
-        }
-    }
-    
-    divCatalog.innerHTML = ''
+    for( let id of listIdCatalogs ){
+        let catalog = dataCatalogs.returnCatalog(id)
 
-    for(let catalog of updateList){
-        addCatalogsMovie(catalog)
+        if(!document.querySelector(`#${id}`) && !catalog){
+            nCatalogNotFound ++
+        }else addCatalogsList.push(catalog)
     }
 
-    sweepElementCatalogs()
+    updateDivCatalogs(addCatalogsList)
 
-    if(nMovies > 1){
-        setTimeout(updateListCatalogs,1)
+    if(nCatalogNotFound > 0){
+        setTimeout(checkListCatalogs,1)
     }else{
-        setTimeout(updateListCatalogs,10000)
+        setTimeout(checkListCatalogs,10000)
         console.log('Update list')
     }
 }
 
-function addCatalogsMovie(catalog){
+function updateDivCatalogs(listCatalogs){
+    divCatalog.innerHTML = ''
+
+    listCatalogs.forEach( catalog => addDivCatalog(catalog) )
+
+    sweepElementCatalogs()
+}
+
+function addDivCatalog(catalog){
     divCatalog.innerHTML += `
     <div class='movie__catalog' id='${catalog.catalogId}'>
         <div class='catalog__img'>
@@ -63,7 +62,7 @@ function sweepElementCatalogs(){
     })
 }
 
-function handleOverCatalog(catalog){
+function handleOverCatalog( catalog ){
     let catalogImg = catalog.querySelector('img')
     let catalogButton = catalog.querySelector('button')
 
@@ -71,7 +70,7 @@ function handleOverCatalog(catalog){
     catalogButton.classList.add('catalog__button--visible')
 }
 
-function handleOutCatalog(catalog){
+function handleOutCatalog( catalog ){
     let catalogImg = catalog.querySelector('img')
     let catalogButton = catalog.querySelector('button')
 
@@ -86,7 +85,7 @@ function handleClickButton( catalog ){
     catalogExpanded(movie)
 }
 
-function catalogExpanded(catalog){
+function catalogExpanded( catalog ){
     document.body.classList.add('body--scroll-disable')
     document.querySelector('.page-background').classList.add('page-background--visible')
     document.querySelector('.page-background').innerHTML = `
