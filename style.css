@@ -323,6 +323,7 @@ body {
     padding: 25px;
     margin: 3rem 2rem;
     font-size: 20px;
+    line-height: 1.5rem;
 }
 
 .description__overview span {
@@ -343,6 +344,7 @@ body {
     padding: 25px;
     margin: 0 2rem 2rem;
     font-size: 18px;
+    line-height: 1.5rem;
 }
 
 .description__info h1 {
@@ -350,7 +352,7 @@ body {
 }
 
 .description__info p {
-    margin: 5px 0 20px 0px;
+    margin: 5px 0 2vw 0px;
 }
 
 .description__info span {
@@ -372,80 +374,66 @@ body {
     .page__movie {
         width: 475px;
     }
+
+    .catalog-expanded{
+        margin: 0;
+    }
+
 }
 
 @media screen and (max-width: 620px) {
     .page {
         width: 80vw;
     }
-
+    
     .page__top p {
         font-size: 20px;
     }
-
+    
     .page__movie {
         width: 220px;
     }
-
+    
     .top__title h1 {
         font-size: 30px;
     }
 
-    .description__overview, .description__info {
-        padding: 0.5rem;
-        margin: 1.5rem 1rem
+    .catalog-expanded {
+        width: 90vw;
     }
-
+    
+    .description__overview, .description__info {
+        padding: 1rem 0.5rem;
+        margin: 1.5rem 1rem;
+    }
+    
     .description__info {
         margin: 0 1rem 1rem;
     }
-
+    
     .description__overview span, .description__info h1{
-        font-size: 25px;
+        font-size: 35px;
     }
-
+    
     .description__info span, .description__overview p{
-        font-size: 15px;
+        font-size: 25px;
+        line-height: 2rem;
     }
-
+    
     .description__info p {
-        font-size: 12px;
+        margin: 5px 0 20px 0;
     }
 }
 
 @media screen and (max-width: 520px) {
     .top__title h1 {
-        font-size: 25px;
+        font-size: 30px;
     }
 
-    .description__overview span, .description__info h1{
-        font-size: 18px;
-    }
-
-    .description__info span, .description__overview p{
-        font-size: 12px;
-    }
-
-    .description__info p {
-        font-size: 10px;
+    .catalog-expanded {
+        width: 95vw;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .top__title h1 {
-        max-width: 200px;
-        font-size: 20px;
-    }
-
-    .description__overview span, .description__info h1{
-        font-size: 14px;
-    }
-
-    .description__info span, .description__overview p{
-        font-size: 10px;
-    }
-
-    .description__info p {
-        font-size: 8px;
-    }
 }
