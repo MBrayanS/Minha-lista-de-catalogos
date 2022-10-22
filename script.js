@@ -22,7 +22,7 @@ function checkListCatalogs(){
     if(nCatalogNotFound > 0){
         setTimeout(checkListCatalogs,1)
     }else{
-        setTimeout(checkListCatalogs,10000)
+        //setTimeout(checkListCatalogs,10000)
         console.log('Update list')
     }
 }
