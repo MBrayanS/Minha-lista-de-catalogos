@@ -79,7 +79,7 @@ function handleOutCatalog( catalog ){
 }
 
 function handleClickButton( catalog ){
-    let catalogId = catalog.querySelector('img').id
+    let catalogId = catalog.id
     let movie = dataCatalogs.returnCatalog(catalogId)
 
     catalogExpanded(movie)
