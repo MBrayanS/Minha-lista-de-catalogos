@@ -1,6 +1,25 @@
-import dataCatalogs from './list-movie.js'
+import dataCatalogs from './list-catalogs.js'
 
-let divCatalog = document.querySelector('.page__movie')
+let divCatalog = document.querySelector('.page__center')
+
+let buttonAddNewCatalog = document.querySelector('.add-catalog_btn')
+
+buttonAddNewCatalog.addEventListener('click',addNewCatalog)
+
+function addNewCatalog(){
+    document.body.classList.add('body--scroll-disable')
+    document.querySelector('.page-background').classList.add('page-background--visible')
+    document.querySelector('.page-background').innerHTML = `
+    <div class='search-new-catalog'>
+        <h1>Encontre novos catálogos</h1>
+        <div class='search-new-catalog_top'>
+            <input type=text placeholder='Pesquisar'>
+            <div class='search-new-catalog_result'>
+            </div>
+        </div>
+    </div>
+    `
+}
 
 checkListCatalogs()
 
@@ -37,7 +56,7 @@ function updateDivCatalogs(listCatalogs){
 
 function addDivCatalog(catalog){
     divCatalog.innerHTML += `
-    <div class='movie__catalog' id='${catalog.catalogId}'>
+    <div class='div__catalog' id='${catalog.catalogId}'>
         <div class='catalog__img'>
             <img id='img_${catalog.catalogId}' src='${catalog.poster}' alt='${catalog.title}'>
             <button class='catalog__button'>Ver mais</button>
@@ -51,7 +70,7 @@ function addDivCatalog(catalog){
 }
 
 function sweepElementCatalogs(){
-    let listElementCatalogs = document.querySelectorAll('.movie__catalog')
+    let listElementCatalogs = document.querySelectorAll('.div__catalog')
 
     listElementCatalogs.forEach(( catalog )=>{
         let catalogButton = catalog.querySelector('.catalog__button')
@@ -122,3 +141,4 @@ function catalogExpandedClose(){
     document.body.classList.remove('body--scroll-disable')
     document.querySelector('.page-background').innerHTML = ''
 }
+
