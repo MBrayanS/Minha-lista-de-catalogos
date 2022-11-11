@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
+<<<<<<< HEAD
+
+.search-bar button:hover, .btn-close:hover, .catalog__button:hover, .add-catalog_btn:hover {
+=======
 .catalog__button:hover, .add-catalog_btn:hover {
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     background-color: var(--hex3);
     border: 1px solid var(--hex7);
-    font-size: 25px;
-    transition: all 0.8s;
+    transform: scale(1.15);
+    transition: all 0.6s;
 }
 
+<<<<<<< HEAD
+.btn-close:active, .catalog__button:active, .add-catalog_btn:active, .search-bar button:active {
+=======
 .btn-close:active, .catalog__button:active, .add-catalog_btn:active {
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     background-color: var(--hex5);
     border: 1px solid var(--hex4);
     transition: all 0.3s;
@@ -25,7 +33,7 @@
 }
 
 body {
-    font-family: 'Concert One', cursive;
+    font-family: 'Concert One', system-ui;
     margin: 0;
     padding: 0;
 }
@@ -71,7 +79,7 @@ body {
 .page__top p {
     color: var(--hex7);
     text-transform: uppercase;
-    font-size: 70px;
+    font-size: 65px;
     margin: 0;
 }
 
@@ -100,6 +108,39 @@ body {
     margin: auto;
     font-size: 30px;
     font-family: "Concert One", Helvetica;
+<<<<<<< HEAD
+    color: var(--hex7);
+    transition: all 0.5s;
+}
+
+.search-catalog {
+    width: 90vw;
+    height: max-content;
+    background-color: var(--hex5);
+    box-shadow: 0px 2px 10px 10px var(--hex4);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+    margin-right: 20px;
+}
+
+.search-catalog h1 {
+    color: var(--hex8);
+    margin: 20px 30px 0; 
+    text-shadow: 0px 0px 10px var(--hex6);
+    text-align: center;
+    font-size: 40px;
+}
+.search-catalog .btn-close {
+    box-shadow: 0px 0px 5px 1px var(--hex6);
+    color: var(--hex8);
+}
+
+.search-catalog_top {
+    width: 80vw;
+=======
     color: var(--hex7)
 }
 
@@ -127,6 +168,7 @@ body {
 
 .search-new-catalog_top {
     width: -webkit-fill-available;
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     height: max-content;
     min-height: 400px;
     background-color: var(--hex6);
@@ -138,7 +180,37 @@ body {
     margin: 40px 30px;
 }
 
+<<<<<<< HEAD
+.search-bar {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 20px;
+}
+
+.search-bar button {
+    width: 100px;
+    height: 35px;
+    color: var(--hex7);
+    background-color: var(--hex4);
+    box-shadow: 2px 2px 15px 5px var(--hex6);
+    border: 1px solid var(--hex4);
+    border-radius: 10px;
+    margin-left: 15px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.search-bar button:hover{
+    transform: scale(1.1);
+}
+
+.search-bar input {
+=======
 .search-new-catalog_top input {
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     width: 300px;
     height: 30px;
     color: var(--hex6);
@@ -146,6 +218,20 @@ body {
     box-shadow: 2px 2px 15px 5px var(--hex6);
     border-radius: 10px;
     padding-left: 15px;
+<<<<<<< HEAD
+    font-family: 'Concert One', system-ui;
+    font-size: 15px;
+}
+
+.search-catalog_results {
+    width: 970px;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 20px 30px;
+    padding: 80px 0 80px;
+    gap: 30px;
+=======
     margin: 15px 10px 0;
     font-family: 'Concert One', Helvetica;
     font-size: 15px;
@@ -155,6 +241,7 @@ body {
     width: -webkit-fill-available;
     height: max-content;
     margin: 40px 20px 30px;
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
 }
 
 .page__center {
@@ -248,7 +335,8 @@ body {
 }
 
 .catalog__button--visible {
-    width: 130px;
+    width: max-content;
+    max-width: 180px;
     height: 50px;
     background-color: var(--hex2);
     box-shadow: 0px 0px 15px 5px var(--hex4);
@@ -257,8 +345,9 @@ body {
     display: block;
     position: absolute;
     margin: auto;
+    padding: 0 10px 0;
     font-size: 22px;
-    font-family: 'Concert One', cursive;
+    font-family: 'Concert One', system-ui;
     text-transform: uppercase;
     color: var(--hex7);
     transition: all 0.5s;
@@ -305,18 +394,25 @@ body {
 }
 
 .catalog-expanded__top img {
+    min-height: 350px;
     border-radius: 15px 15px 0 0;
     box-shadow: 0px 0px 15px 10px var(--hex4);
     opacity: 80%;
 }
 
 .btn-close {
+<<<<<<< HEAD
+    width: 40px;
+    height: 40px;
+=======
     width: 20px;
     height: 20px;
     background: none;
     box-shadow: 0px 0px 4px 0.5px var(--hex7);
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     color: var(--hex7);
-    border: none;
+    background-color: var(--hex5);
+    border: 1px solid var(--hex6);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -324,24 +420,27 @@ body {
     align-self: flex-end;
     margin: 20px;
     position: absolute;
-    transform: scale(2);
-    font-size: 18px;
-    font-family: 'Concert One', cursive;
-    filter: brightness(1);
+    font-size: 35px;
+    font-family: 'Concert One', system-ui;
+    transition: all 0.4s;
 }
 
+<<<<<<< HEAD
+=======
 .btn-close:hover {
     font-size: 20px;
     transform: scale(2.3);
     transition: all 0.2s;
 }
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
 
 .top__title {
     max-width: 330px;
-    height: 45vw;
+    height: 40vw;
     display: flex;
     flex-direction: column-reverse;
-    max-height: 350px;
+    min-height: 250px;
+    max-height: 320px;
     margin-left: 30px;
     color: var(--hex7);
     position: absolute;
@@ -367,6 +466,7 @@ body {
 }
 
 .description__overview {
+    width: -webkit-fill-available;
     height: max-content;
     color: var(--hex8);
     background-color: var(--hex6);
@@ -388,6 +488,7 @@ body {
 }
 
 .description__info {
+    width: -webkit-fill-available;
     height: max-content;
     color: var(--hex8);
     background-color: var(--hex6);
@@ -416,19 +517,32 @@ body {
     .page__center {
         width: 725px;
     }
+
+    .search-catalog_results {
+        width: 720px;
+    }
 }
 
 @media screen and (max-width: 950px) {  
     .page__top p {
-        font-size: 50px;
+        font-size: 40px;
     }
  
     .page__center {
         width: 475px;
     }
 
+<<<<<<< HEAD
+    .search-catalog_results {
+        width: 470px;
+    }
+
+    .search-catalog, .catalog-expanded{
+        margin-right: 0;
+=======
     .catalog-expanded{
         margin: 0;
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     }
 
 }
@@ -442,7 +556,11 @@ body {
         font-size: 20px;
     }
     
+<<<<<<< HEAD
+    .page__center, .search-catalog_results{
+=======
     .page__center {
+>>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
         width: 220px;
     }
     
