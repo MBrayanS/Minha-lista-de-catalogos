@@ -1,6 +1,5 @@
 import dataCatalogs from './list-catalogs.js'
 
-<<<<<<< HEAD
 let divCatalogs = document.querySelector('.page__center')
 let addCatalogButton = document.querySelector('.add-catalog_btn')
 
@@ -75,78 +74,11 @@ function createDivSearchCatalog(){
             </label>
             <div class='search-catalog_results'>
             </div>
-=======
-let divCatalog = document.querySelector('.page__center')
-
-let buttonAddNewCatalog = document.querySelector('.add-catalog_btn')
-
-buttonAddNewCatalog.addEventListener('click',addNewCatalog)
-
-function addNewCatalog(){
-    document.body.classList.add('body--scroll-disable')
-    document.querySelector('.page-background').classList.add('page-background--visible')
-    document.querySelector('.page-background').innerHTML = `
-    <div class='search-new-catalog'>
-        <h1>Encontre novos catálogos</h1>
-        <div class='search-new-catalog_top'>
-            <input type=text placeholder='Pesquisar'>
-            <div class='search-new-catalog_result'>
-            </div>
         </div>
     </div>
     `
 }
 
-checkListCatalogs()
-
-function checkListCatalogs(){
-    let listIdCatalogs = dataCatalogs.returnListIdCatalogs()
-    let nCatalogNotFound = 0
-    let addCatalogsList = []
-    
-    for( let id of listIdCatalogs ){
-        let catalog = dataCatalogs.returnCatalog(id)
-
-        if(!document.querySelector(`#${id}`) && !catalog){
-            nCatalogNotFound ++
-        }else addCatalogsList.push(catalog)
-    }
-
-    updateDivCatalogs(addCatalogsList)
-
-    if(nCatalogNotFound > 0){
-        setTimeout(checkListCatalogs,1)
-    }else{
-        //setTimeout(checkListCatalogs,10000)
-        console.log('Update list')
-    }
-}
-
-function updateDivCatalogs(listCatalogs){
-    divCatalog.innerHTML = ''
-
-    listCatalogs.forEach( catalog => addDivCatalog(catalog) )
-
-    sweepElementCatalogs()
-}
-
-function addDivCatalog(catalog){
-    divCatalog.innerHTML += `
-    <div class='div__catalog' id='${catalog.catalogId}'>
-        <div class='catalog__img'>
-            <img id='img_${catalog.catalogId}' src='${catalog.poster}' alt='${catalog.title}'>
-            <button class='catalog__button'>Ver mais</button>
-        </div>
-        <div class='catalog__bottom'>
-            <p class='catalog__bottom__title'>${catalog.title}</p>
-            <p class='catalog__bottom__stars'>${catalog.stars}<span> / 10</span></p>
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
-        </div>
-    </div>
-    `
-}
-
-<<<<<<< HEAD
 checkListCatalogs()
 
 function checkListCatalogs(){
@@ -213,10 +145,6 @@ function createDivCatalog(params){
 function sweepElementCatalogs(params){
 
     let listElementCatalogs = params.elementDiv.querySelectorAll('.div__catalog')
-=======
-function sweepElementCatalogs(){
-    let listElementCatalogs = document.querySelectorAll('.div__catalog')
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
 
     listElementCatalogs.forEach(( catalog )=>{
         let catalogButton = catalog.querySelector('.catalog__button')
@@ -251,13 +179,7 @@ function handleClickButton( catalog ){
 }
 
 function catalogExpanded( catalog ){
-<<<<<<< HEAD
     return `
-=======
-    document.body.classList.add('body--scroll-disable')
-    document.querySelector('.page-background').classList.add('page-background--visible')
-    document.querySelector('.page-background').innerHTML = `
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
         <div class='catalog-expanded'>
             <div class='catalog-expanded__top'>
                 <img src='${catalog.backdrop}' alt='${catalog.title}'>
@@ -282,8 +204,7 @@ function catalogExpanded( catalog ){
                 </div>
             </div>
         </div>
-    `
-}
+    `}
 
 function pageExpanded(content){
     let pageBackground = document.querySelector('.page-background')
@@ -299,13 +220,3 @@ function pageExpandedClose(){
     document.body.classList.remove('body--scroll-disable')
     document.querySelector('.page-background').innerHTML = ''
 }
-
-<<<<<<< HEAD
-function treatId(id){
-    return id.slice(3,id.lenght)
-}
-
-
-//@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
-=======
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b

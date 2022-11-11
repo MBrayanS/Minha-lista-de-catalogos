@@ -1,7 +1,6 @@
 import ApiConfig from './apiConfig.js'
 
 function funcListCatalogs() {
-<<<<<<< HEAD
     let listIdWaitMovies = []
     let listCatalogs = {}
     let apiConfig = ApiConfig()
@@ -75,59 +74,12 @@ function funcListCatalogs() {
         let directors = ''
         let directorsList = credits.crew.filter(crew => crew.job == 'Director')
 
-=======
-    let listIdCatalogs = []
-    let listCatalogs = {}
-    let apiConfig = ApiConfig()
-    
-    function updateListCatalogs() {
-        listIdCatalogs.forEach( ( catalogId ) => {
-            let catalog = returnCatalog(catalogId)
-            if( !catalog ){
-                let apiKey = apiConfig.apiKey
-                let urlMovie = `https://api.themoviedb.org/3/movie/${catalogId}?api_key=${apiKey}&language=pt-BR`
-                
-                getApiData(urlMovie,( dataCatalog )=>{
-                    let urlCredits = `https://api.themoviedb.org/3/movie/${dataCatalog.imdb_id}/credits?api_key=${apiKey}&language=pt-BR`
-                    
-                    getApiData(urlCredits,( credits )=>{
-                        dataCatalog.casts = credits.cast
-                        dataCatalog.crews = credits.crew
-                        
-                        createCatalog(dataCatalog)
-                    })
-                })
-            }
-        })
-    }
-
-    function toExtractData(data){
-        let poster = `https://image.tmdb.org/t/p/w500${data.poster_path}`
-        let backdrop = `https://image.tmdb.org/t/p/w500${data.backdrop_path}`
-        let stars = data.vote_average.toFixed(1)
-        let releaseDate = data.release_date
-        let runtime = treatTime(data.runtime)
-        let genres = ''
-        let directors = ''
-        let cast = ''
-        
-        for(let id = 0; id < data.genres.length; id++){
-            let genre = data.genres[id]
-            
-            genres += `${genre.name}`
-            if(id < data.genres.length-1) genres += ', '
-        }
-        
-        let directorsList = data.crews.filter(crew => crew.job == 'Director')
-        
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
         for(let id = 0; id < directorsList.length; id++){
             let person = directorsList[id]
             
             directors += person.name
             if(id < directorsList.length-1) directors += ', '
         }
-<<<<<<< HEAD
 
         return directors
     }
@@ -145,36 +97,6 @@ function funcListCatalogs() {
         return cast
     }
 
-=======
-        
-        for(let id = 0; id < 10; id++ ){
-            let actor = data.casts[id]
-            cast += `${actor.name}`
-            if(id < 9) cast += ', '
-        }
-
-        return {
-            catalogId: data.imdb_id,
-            title: data.title,
-            overview: data.overview,
-            poster,
-            backdrop,
-            stars,
-            releaseDate,
-            runtime,
-            directors,
-            cast,
-            genres,
-        }
-    }
-    
-    function createCatalog(data){
-        let catalog = toExtractData(data)
-
-        addCatalog(catalog)
-    }
-    
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     function treatTime(time){
         let hours = Math.trunc(time/60)
         let minutes = Math.trunc(time - hours*60)
@@ -183,13 +105,9 @@ function funcListCatalogs() {
     }
     
     function addIdCatalog(catalogId){
-<<<<<<< HEAD
         let searchId = listIdWaitMovies.find(id => id === catalogId)
 
         if(!searchId) listIdWaitMovies[catalogId] = catalogId
-=======
-        listIdCatalogs.push(catalogId)
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     }
     
     function addCatalog(catalog){
@@ -201,20 +119,13 @@ function funcListCatalogs() {
     }
     
     function returnListIdCatalogs(){
-<<<<<<< HEAD
         return Object.keys(listCatalogs)
     }
 
-=======
-        return listIdCatalogs
-    }
-    
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     function returnCatalog(catalogId){
         return listCatalogs[catalogId] || false
     }
 
-<<<<<<< HEAD
     function moviesOnHold(){
         if (Object.keys(listIdWaitMovies).length > 0){
             return true
@@ -275,20 +186,10 @@ function funcListCatalogs() {
         }
     }
 
-=======
-    function getApiData(url,func){
-        fetch(url)
-        .catch( error => { console.error(error)} )
-        .then(response => { return response.json() })
-        .then(data => { if(data.success != false) func(data) })
-    }
-    
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
     return {
         returnCatalog,
         returnListCatalogs,
         returnListIdCatalogs,
-<<<<<<< HEAD
         returnSummaryCatalogsList,
         updateListCatalogs,
         addIdCatalog,
@@ -297,14 +198,6 @@ function funcListCatalogs() {
         moviesOnHold
     }    
 }    
-
-=======
-        addIdCatalog,
-        addCatalog,
-        updateListCatalogs,
-    }
-}
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
 
 let dataCatalogs = funcListCatalogs()
 
@@ -355,19 +248,6 @@ export default dataCatalogs
 
 
 
-<<<<<<< HEAD
-function getApiDatas(catalogId){
-    let apiKey = apiConfig.apiKey
-    //let url = `https://api.themoviedb.org/3/movie/${catalogId}/credits?api_key=${apiKey}&language=pt-BR`
-    let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${string}`
-    
-    fetch(url)
-    .then(response => { return response.json() })
-    .then(date => {
-        for(let id of date.crew){
-=======
-
-
 
 function getApiDatas(catalogId){
     let apiKey = apiConfig.apiKey
@@ -378,7 +258,6 @@ function getApiDatas(catalogId){
     .then(response => { return response.json() })
     .then(data => {
         for(let id of data.crew){
->>>>>>> a797ed4b05874ac4397acba1d71317148ed0f36b
             if(id.job.includes('Write')) console.log(id)
         }
     })
