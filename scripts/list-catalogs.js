@@ -1,19 +1,18 @@
 import ApiConfig from './apiConfig.js'
 
 function funcListCatalogs() {
-    let listIdWaitMovies = []
+    let listIdWaitMovies = {}
     let listCatalogs = {}
     let apiConfig = ApiConfig()
     let resultOfSearch = {}
     
     function updateListCatalogs() {
         for( let id in listIdWaitMovies){
-            let catalogId = listIdWaitMovies[id]
-            let catalog = returnCatalog(catalogId)
+            let catalog = returnCatalog(id)
 
-            if( catalog == false){
+            if( !catalog ){
                 let apiKey = apiConfig.apiKey
-                let urlMovie = `https://api.themoviedb.org/3/movie/${catalogId}?api_key=${apiKey}&language=pt-BR`
+                let urlMovie = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=pt-BR`
                 
                 getApiData(urlMovie,( date )=>{
                     let urlCredits = `https://api.themoviedb.org/3/movie/${date.imdb_id}/credits?api_key=${apiKey}&language=pt-BR`
@@ -105,13 +104,17 @@ function funcListCatalogs() {
     }
     
     function addIdCatalog(catalogId){
-        let searchId = listIdWaitMovies.find(id => id === catalogId)
-
-        if(!searchId) listIdWaitMovies[catalogId] = catalogId
+        if(!listIdWaitMovies.id){
+            listIdWaitMovies[catalogId] = catalogId
+        }else alert()
     }
     
     function addCatalog(catalog){
         listCatalogs[`${catalog.catalogId}`] = catalog
+    }
+
+    function removeCatalog(id){
+        delete listCatalogs[id]
     }
     
     function returnListCatalogs(){
@@ -194,6 +197,7 @@ function funcListCatalogs() {
         updateListCatalogs,
         addIdCatalog,
         addCatalog,
+        removeCatalog,
         searchCatalogs,
         moviesOnHold
     }    
@@ -225,43 +229,3 @@ dataCatalogs.addIdCatalog('tt1569923')
 dataCatalogs.updateListCatalogs()
 
 export default dataCatalogs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function getApiDatas(catalogId){
-    let apiKey = apiConfig.apiKey
-    let url = `https://api.themoviedb.org/3/movie/${catalogId}/credits?api_key=${apiKey}&language=pt-BR`
-    //let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${string}`
-    
-    fetch(url)
-    .then(response => { return response.json() })
-    .then(data => {
-        for(let id of data.crew){
-            if(id.job.includes('Write')) console.log(id)
-        }
-    })
-    .catch( error => alert(error))
-}
-
-//getApiData('tt0133093')

@@ -11,25 +11,18 @@ searchNewCatalog({
 
 let divCatalogs = document.querySelector('.page__center')
 
-
-teste()
-
-function teste(){
-    if (Object.keys(dataCatalogs.returnListCatalogs()).length > 10){
-        checkListCatalogs()
-    }else requestAnimationFrame(teste)
-}
-
-
+checkListCatalogs()
 
 function checkListCatalogs(){
     let listCatalogs = dataCatalogs.returnListCatalogs()
-
+    
     for( let id in listCatalogs ){
         let catalog = listCatalogs[id]
 
         if(!document.querySelector(`#${id}`)) prepareElement(catalog)
     }
+
+    requestAnimationFrame(checkListCatalogs)
 }
 
 function prepareElement(catalog){
@@ -95,7 +88,7 @@ function handleClickButton( divCatalog ){
     let catalogId = divCatalog.id
     let catalog = dataCatalogs.returnCatalog(catalogId)
 
-    pageExpanded( catalogExpanded(catalog) ) 
+    pageExpanded( catalogExpanded(catalog), true ) 
 }
 
 function catalogExpanded( catalog ){
@@ -125,6 +118,9 @@ function catalogExpanded( catalog ){
                     <span>Elenco:</span> <p>${catalog.cast}</p>
                     <p></p>
                 </div>
+                <div class='description__remove'>
+                    <button id='${catalog.catalogId}' class='description__btn-remove'>Remover</button>
+                </div>
             </div>
         </div>
     `
@@ -132,17 +128,30 @@ function catalogExpanded( catalog ){
     return divCatalogExpaned
 }
 
-function pageExpanded(content){
+function pageExpanded(content,btnRemove){
     let pageBackground = document.querySelector('.page-background')
 
     document.body.classList.add('body--scroll-disable')
     pageBackground.classList.add('page-background--visible')
     pageBackground.appendChild(content)
     pageBackground.querySelector('.btn-close').addEventListener('click',pageExpandedClose)
+
+    if(btnRemove) pageBackground.querySelector('.description__btn-remove').addEventListener('click',removeCatalog)
 }
 
 function pageExpandedClose(){
     document.querySelector('.page-background').classList.remove('page-background--visible')
     document.body.classList.remove('body--scroll-disable')
     document.querySelector('.page-background').innerHTML = ''
+}
+
+function removeCatalog({ target }){
+    let id = target.id
+    let divCatalog = document.querySelector(`#${id}`)
+
+    pageExpandedClose()
+
+    dataCatalogs.removeCatalog(id)
+
+    divCatalogs.removeChild(divCatalog)
 }

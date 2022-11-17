@@ -21,11 +21,12 @@ export default (functions)=>{
 
     function handleSearchCatalog(text){
         dataCatalogs.searchCatalogs(text)
-    
+        
         askForResultOfSearch()
     }
     
     function askForResultOfSearch(){
+        document.querySelector('.search-catalog_results').innerHTML = ''
         let summaryCatalogsList = dataCatalogs.returnSummaryCatalogsList()
     
         if(!summaryCatalogsList){
@@ -36,7 +37,6 @@ export default (functions)=>{
     }
     
     function showFoundCatalogs(summaryCatalogsList){
-        
         for( let id in summaryCatalogsList ){
             let catalog = summaryCatalogsList[id]
             prepareElement(catalog)

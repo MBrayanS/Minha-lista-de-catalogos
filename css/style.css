@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
-.search-bar button:hover, .btn-close:hover, .catalog__button:hover, .add-catalog_btn:hover {
-    background-color: var(--hex3);
-    border: 1px solid var(--hex7);
-    transform: scale(1.15);
-    transition: all 0.6s;
-}
-
-.btn-close:active, .catalog__button:active, .add-catalog_btn:active, .search-bar button:active {
-    background-color: var(--hex5);
-    border: 1px solid var(--hex4);
-    transition: all 0.3s;
-}
-
 :root {
     --hex1: #0F4B80;
     --hex2: #11538C;
@@ -28,6 +15,19 @@ body {
     font-family: 'Concert One', system-ui;
     margin: 0;
     padding: 0;
+}
+
+button:hover {
+    background-color: var(--hex3);
+    border: 1px solid var(--hex7);
+    transform: scale(1.15);
+    transition: all 0.6s;
+}
+
+button:active {
+    background-color: var(--hex5);
+    border: 1px solid var(--hex4);
+    transition: all 0.3s;
 }
 
 .body--scroll-disable {
@@ -396,29 +396,7 @@ body {
     position: relative;
 }
 
-.description__overview {
-    width: -webkit-fill-available;
-    height: max-content;
-    color: var(--hex8);
-    background-color: var(--hex6);
-    box-shadow: 0px 2px 10px 10px var(--hex6);
-    border-radius: 10px;
-    padding: 25px;
-    margin: 3rem 2rem;
-    font-size: 20px;
-    line-height: 1.5rem;
-}
-
-.description__overview span {
-    font-size: 30px;
-}
-
-.description__overview p {
-    text-align: justify;
-    text-indent: 15px;
-}
-
-.description__info {
+.description__overview, .description__info, .description__remove {
     width: -webkit-fill-available;
     height: max-content;
     color: var(--hex8);
@@ -429,6 +407,19 @@ body {
     margin: 0 2rem 2rem;
     font-size: 18px;
     line-height: 1.5rem;
+}
+
+.description__overview {
+    margin: 3rem 2rem
+}
+
+.description__overview span {
+    font-size: 30px;
+}
+
+.description__overview p {
+    text-align: justify;
+    text-indent: 15px;
 }
 
 .description__info h1 {
@@ -442,6 +433,24 @@ body {
 .description__info span {
     font-size: 20px;
     margin: 0;
+}
+
+.description__remove {
+    text-align: center;
+}
+
+.description__remove button {
+    width: 280px;
+    height: 60px;
+    background-color: var(--hex3);
+    box-shadow: 3px 2px 15px 2px var(--hex5);
+    border: 3px solid var(--hex5);
+    border-radius: 10px;
+    margin: auto;
+    font-size: 30px;
+    font-family: "Concert One", Helvetica;
+    color: var(--hex7);
+    transition: all 0.5s;
 }
 
 @media screen and (max-width: 1270px) {
