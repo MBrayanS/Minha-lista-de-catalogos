@@ -153,11 +153,11 @@ function funcListCatalogs() {
     function updateResultOfSearch({ results }){
         resultOfSearch = {}
 
-        results.forEach( result => resultOfSearch[result.id] = result )
-    }
-
-    function returnResultOfSearch(){
-        return resultOfSearch || false
+        results.forEach( result => {
+            let id = `id_${result.id}`
+            result.id = id
+            resultOfSearch[id] = result 
+        })
     }
 
     function returnSummaryCatalogsList(){
@@ -189,11 +189,16 @@ function funcListCatalogs() {
         }
     }
 
+    function clearSummaryCatalogsList(){
+        resultOfSearch = {}
+    }
+
     return {
         returnCatalog,
         returnListCatalogs,
         returnListIdCatalogs,
         returnSummaryCatalogsList,
+        clearSummaryCatalogsList,
         updateListCatalogs,
         addIdCatalog,
         addCatalog,

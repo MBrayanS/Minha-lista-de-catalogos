@@ -20,27 +20,31 @@ export default (functions)=>{
     }
 
     function handleSearchCatalog(text){
+        dataCatalogs.clearSummaryCatalogsList()
+        document.querySelector('.search-catalog_results').innerHTML = ''
         dataCatalogs.searchCatalogs(text)
         
         askForResultOfSearch()
     }
     
     function askForResultOfSearch(){
-        document.querySelector('.search-catalog_results').innerHTML = ''
-        let summaryCatalogsList = dataCatalogs.returnSummaryCatalogsList()
-    
-        if(!summaryCatalogsList){
-            setTimeout(askForResultOfSearch, 1)
-        }else {
-            showFoundCatalogs(summaryCatalogsList)
+
+        if(!dataCatalogs.returnSummaryCatalogsList()){
+           requestAnimationFrame(askForResultOfSearch)
+        }else{
+            showFoundCatalogs()
         }
     }
     
-    function showFoundCatalogs(summaryCatalogsList){
-        for( let id in summaryCatalogsList ){
-            let catalog = summaryCatalogsList[id]
-            prepareElement(catalog)
+    function showFoundCatalogs(){
+        let searchCatalogsResults = document.querySelector('.search-catalog_results')
+        let summaryCatalogsList = dataCatalogs.returnSummaryCatalogsList()
+
+        for( let catalog of summaryCatalogsList ){
+            if(!searchCatalogsResults.querySelector(`#${catalog.catalogId}`)) prepareElement(catalog)
         }
+
+        if(summaryCatalogsList.lenght > 0) requestAnimationFrame(showFoundCatalogs)
     }
     
     function prepareElement(catalog){
@@ -59,9 +63,14 @@ export default (functions)=>{
     }
     
     function addCatalogForList(catalog){
-        dataCatalogs.addIdCatalog(catalog.id)
+        let id = clearId(catalog.id)
+        dataCatalogs.addIdCatalog(id)
         dataCatalogs.updateListCatalogs()
         pageExpandedClose()
+    }
+
+    function clearId(id){
+        return id.slice(3,id.lenght)
     }
     
     function createDivSearchCatalog(){
