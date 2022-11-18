@@ -437,8 +437,9 @@ button:active {
     text-align: center;
 }
 
-.description__remove button {
+.description__btn-remove {
     width: 280px;
+    max-width: 55vw;
     height: 60px;
     background-color: var(--hex3);
     box-shadow: 3px 2px 15px 2px var(--hex5);
@@ -478,6 +479,10 @@ button:active {
         margin-right: 0;
     }
 
+    .catalog-expanded > .btn-close {
+        width: 100px;
+    }
+
 }
 
 @media screen and (max-width: 620px) {
@@ -501,13 +506,13 @@ button:active {
         width: 90vw;
     }
     
-    .description__overview, .description__info {
+    .description__overview, .description__info, .description__remove {
         padding: 1rem 0.5rem;
         margin: 1.5rem 1rem;
     }
     
     .description__info {
-        margin: 0 1rem 1rem;
+        margin: 1rem;
     }
     
     .description__overview span, .description__info h1{
@@ -531,5 +536,9 @@ button:active {
 
     .catalog-expanded {
         width: 95vw;
+    }
+
+    .catalog-expanded button {
+        transform: scale(1.5);
     }
 }

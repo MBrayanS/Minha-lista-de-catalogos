@@ -99,10 +99,10 @@ function catalogExpanded( catalog ){
         <div class='catalog-expanded'>
             <div class='catalog-expanded__top'>
                 <img src='${catalog.backdrop}' alt='${catalog.title}'>
-                <button class='btn-close'>x</button>
                 <div class='top__title'>
                     <h1>${catalog.title}</h1>
                 </div>
+                <button class='btn-close'>x</button>
             </div>
             <div class='catalog-expanded__description'>
                 <div class='description__overview'>
