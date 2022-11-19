@@ -98,11 +98,11 @@ function catalogExpanded( catalog ){
     divCatalogExpaned.innerHTML = `
         <div class='catalog-expanded'>
             <div class='catalog-expanded__top'>
-                <img src='${catalog.backdrop}' alt='${catalog.title}'>
+                <img class='top__img' src='${catalog.backdrop}' alt='${catalog.title}'>
                 <div class='top__title'>
                     <h1>${catalog.title}</h1>
                 </div>
-                <button class='btn-close'>x</button>
+                <img class='btn-close' src='./img/close.png'>
             </div>
             <div class='catalog-expanded__description'>
                 <div class='description__overview'>

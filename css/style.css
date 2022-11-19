@@ -17,14 +17,14 @@ body {
     padding: 0;
 }
 
-button:hover {
+button:hover, .btn-close:hover {
     background-color: var(--hex3);
     border: 1px solid var(--hex7);
     transform: scale(1.15);
     transition: all 0.6s;
 }
 
-button:active {
+button:active, .btn-close:active {
     background-color: var(--hex5);
     border: 1px solid var(--hex4);
     transition: all 0.3s;
@@ -337,31 +337,12 @@ button:active {
     flex-direction: column;
 }
 
-.catalog-expanded__top img {
+.top__img {
     min-height: 350px;
     border-radius: 15px 15px 0 0;
     box-shadow: 0px 0px 15px 10px var(--hex4);
     opacity: 80%;
 }
-
-.btn-close {
-    width: 40px;
-    height: 40px;
-    color: var(--hex7);
-    background-color: var(--hex5);
-    border: 1px solid var(--hex6);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    align-self: flex-end;
-    margin: 20px;
-    position: absolute;
-    font-size: 35px;
-    font-family: 'Concert One', system-ui;
-    transition: all 0.4s;
-}
-
 
 .top__title {
     max-width: 330px;
@@ -378,6 +359,19 @@ button:active {
 .top__title h1 {
     font-size: 35px;
     text-shadow: 0px 0px 10px var(--hex6);
+}
+
+.btn-close {
+    width: 30px;
+    height: 30px;
+    background-color: var(--hex4);
+    border: 1px solid var(--hex5);
+    border-radius: 10px;
+    align-self: flex-end;
+    margin: 10px;
+    position: absolute;
+    padding: 3px;
+    transition: all 0.4s;
 }
 
 .catalog-expanded__description {
