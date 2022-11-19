@@ -176,7 +176,7 @@ button:active, .btn-close:active {
     background-color: var(--hex8);
     box-shadow: 2px 2px 15px 5px var(--hex6);
     border-radius: 10px;
-    padding-left: 15px;
+    padding: 0 15px 0;
     font-family: 'Concert One', system-ui;
     font-size: 15px;
 }
@@ -533,7 +533,7 @@ button:active, .btn-close:active {
     }
     
     .search-bar button {
-        width: 250px;
+        width: 260px;
         margin: 10px 0 0;
     }
 
