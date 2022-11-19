@@ -161,6 +161,7 @@ button:active, .btn-close:active {
     border: 1px solid var(--hex4);
     border-radius: 10px;
     margin-left: 15px;
+    font-family: 'Concert One', system-ui;
     font-size: 16px;
     transition: all 0.3s;
 }

@@ -82,7 +82,7 @@ export default (functions)=>{
         <img class='btn-close' src='./img/close.png'>
         <div class='search-catalog_top'>
             <label class='search-bar'>
-                <input type=text placeholder='Pesquisar' autofocus>
+                <input type=text placeholder='Nome do filme' autofocus>
                 <button>Pesquisar</button>
             </label>
             <div class='search-catalog_results'>
