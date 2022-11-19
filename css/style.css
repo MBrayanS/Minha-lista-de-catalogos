@@ -105,7 +105,7 @@ button:active, .btn-close:active {
 }
 
 .search-catalog {
-    width: 90vw;
+    width: 85vw;
     height: max-content;
     background-color: var(--hex5);
     box-shadow: 0px 2px 10px 10px var(--hex4);
@@ -153,7 +153,7 @@ button:active, .btn-close:active {
 
 .search-bar button {
     width: 100px;
-    height: 35px;
+    height: 45px;
     color: var(--hex7);
     background-color: var(--hex4);
     box-shadow: 2px 2px 15px 5px var(--hex6);
@@ -170,7 +170,7 @@ button:active, .btn-close:active {
 
 .search-bar input {
     width: 300px;
-    height: 30px;
+    height: 40px;
     color: var(--hex6);
     background-color: var(--hex8);
     box-shadow: 2px 2px 15px 5px var(--hex6);
@@ -470,7 +470,7 @@ button:active, .btn-close:active {
     }
 
     .search-catalog, .catalog-expanded{
-        margin-right: 0;
+        margin: 15px 0;
     }
 
     .catalog-expanded > .btn-close {
@@ -521,6 +521,24 @@ button:active, .btn-close:active {
     .description__info p {
         margin: 5px 0 20px 0;
     }
+
+    .search-catalog h1 {
+        max-width: 300px;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+        margin: 20px 0;
+    }
+    
+    .search-bar button {
+        width: 250px;
+        margin: 10px 0 0;
+    }
+
+    .search-bar input {
+        width: 230px;
+    }
 }
 
 @media screen and (max-width: 520px) {
@@ -534,5 +552,9 @@ button:active, .btn-close:active {
 
     .catalog-expanded button {
         transform: scale(1.5);
+    }
+
+    .search-catalog h1 {
+        max-width: 220px;
     }
 }
