@@ -79,7 +79,7 @@ export default (functions)=>{
         divSearchCatalog.classList.add('search-catalog')
         divSearchCatalog.innerHTML = `
         <h1>Encontre novos catálogos</h1>
-        <button class='btn-close'>x</button>
+        <img class='btn-close' src='./img/close.png'>
         <div class='search-catalog_top'>
             <label class='search-bar'>
                 <input type=text placeholder='Pesquisar'>
