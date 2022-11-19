@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --hex1: #0F4B80;
     --hex2: #11538C;
