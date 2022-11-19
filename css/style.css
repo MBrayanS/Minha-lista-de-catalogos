@@ -179,6 +179,7 @@ button:active, .btn-close:active {
     padding: 0 15px 0;
     font-family: 'Concert One', system-ui;
     font-size: 15px;
+    outline: none;
 }
 
 .search-catalog_results {
