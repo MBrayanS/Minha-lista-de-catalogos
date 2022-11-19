@@ -132,7 +132,7 @@ button:active, .btn-close:active {
 
 .search-catalog_top {
     width: 80vw;
-    height: max-content;
+    height: -webkit-fill-available;
     min-height: 400px;
     background-color: var(--hex6);
     box-shadow: 0px 0px 15px 5px var(--hex6);
