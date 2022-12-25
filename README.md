@@ -3,6 +3,13 @@
  Neste projeto eu transformei minha lista de filmes em uma pagina web. Onde é possível ver não só os nomes dos filmes, mas também imagens, resumo e outras informações interessantes.
  
  ##
+
+<div align='center'>
+  <a href='https://landing-page-para-venda-de-headphones.vercel.app/'><img width='70%' height='400px' src='./img/projeto.png'></a>
+  <a href='https://landing-page-para-venda-de-headphones.vercel.app/'><img width='20%' height='400px' src='./img/projeto-mobile.png'></a>
+</div>
+ 
+ ##
  
  Para isso eu usei as seguintes tecnologias:
  
