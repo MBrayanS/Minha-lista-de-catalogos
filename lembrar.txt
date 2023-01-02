@@ -1,0 +1,7 @@
+--- Antes de mandar para a main ---
+
+* Retirar o comentario de style.css
+
+* Adicionar o style.css.map para o .gitignore
+
+* Adicinar a pasta scss para o .gitignore
