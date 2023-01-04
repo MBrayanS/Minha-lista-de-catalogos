@@ -1,4 +1,8 @@
 footer {
     @extend %header-footer-pattern;
     border-radius: .7rem .7rem 0 0;
+
+    h1 {
+        font-size: 2rem;
+    }
 }
