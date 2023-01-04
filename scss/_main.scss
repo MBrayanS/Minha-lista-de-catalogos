@@ -1,0 +1,98 @@
+main {
+    width: 80vw;
+    min-height: 40vh;
+    margin: 0 auto;
+    box-shadow: 0 0 1rem .25rem $color-shadow;
+    padding: 10vh 3vw;
+}
+
+.catalog-list {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+    gap: 2.5em;
+    margin: 3rem 0 ;
+}
+
+.card-catalog {
+    background-color: $color-black;
+    width: 14em;
+    height: 21em;
+    position: relative;
+    border-radius: .7rem;
+    margin: auto;
+    transition: all .5s;
+
+    &:hover {
+        transform: scale(1.07);
+        img {
+            opacity: 1;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: .7rem;
+        box-shadow: .2em -.2em 1em .5em $color-shadow;
+        opacity: .7;
+        transition: all .5s;
+    }
+}
+
+.card__button {
+    @extend %button-pattern;
+    width: 80%;
+    height: 18%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    &:hover{
+        transform: translate(-50%,-50%) scale(1.1);
+    }
+}
+
+.card__bottom {
+    color: $color-gray;
+    background-color: rgba($color-black, .9);
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    padding: 1em 0; 
+    border-radius: .7rem;
+    text-align: center;
+    font-family: $font-pattern;
+    text-transform: uppercase;
+    text-shadow: .2rem .2rem .1rem $color-shadow; 
+
+    h2, p {
+        max-width: 90%;
+        font-size: 1.4em;
+        margin: 0 auto;
+    }
+
+    p { margin-top: .5em; }
+
+    span { font-size: .7em; }
+}
+
+.add-catalog {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    button {
+        @extend %button-pattern;
+        width: 25em;
+        height: 5em;
+        margin: 5em 0;
+
+        &:hover {
+            font-size: 1.3em;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+%center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%header-footer-pattern {
+    @extend %center-content;
+    background-color: $color-secondary;
+    width: 90vw;
+    height: 20vh;
+    position: relative;
+    box-shadow: 0 0 1rem .25rem $color-shadow;
+    margin: 0 auto;
+
+    h1 {
+        color: $color-white;
+        font-family: $font-pattern;
+        font-size: 4em;
+        text-shadow: .3rem .3rem .1rem $color-shadow;
+    }
+}
+
+%button-pattern {
+    color: $color-white;
+    background-color: $color-secondary;
+    box-shadow: .2rem -.2rem 1rem .25rem $color-shadow;
+    border: none;
+    border-radius: .5em;
+    font-size: 1.3em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all .5s;
+
+    &:hover {
+        font-size: 1.5em;
+        background-color: $color-tertiary;
+    }
+
+    &:active {
+        transition: all .2s;
+        background-color: $color-quaternary;
+    }
+}
