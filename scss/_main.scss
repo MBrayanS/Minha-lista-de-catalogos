@@ -29,6 +29,10 @@ main {
         img {
             opacity: 1;
         }
+        
+        button {
+            display: block;
+        }
     }
 
     img {
@@ -45,10 +49,12 @@ main {
     @extend %button-pattern;
     width: 80%;
     height: 18%;
+    display: none;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%,-50%);
+    cursor: pointer;
 
     &:hover{
         transform: translate(-50%,-50%) scale(1.1);
