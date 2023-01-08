@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,10 @@
 
 body {
   background-color: #0F4B80;
+}
+
+.body--scroll-disable {
+  overflow: hidden;
 }
 
 footer, header {
@@ -30,7 +35,7 @@ footer h1, header h1 {
   text-shadow: 0.3rem 0.3rem 0.1rem #082640;
 }
 
-.add-catalog button, .card__button {
+.btn-close, .remove-catalog, .add-catalog button, .card__button {
   color: #e1ebf5;
   background-color: #11538C;
   box-shadow: 0.2rem -0.2rem 1rem 0.25rem #082640;
@@ -41,11 +46,11 @@ footer h1, header h1 {
   text-transform: uppercase;
   transition: all 0.5s;
 }
-.add-catalog button:hover, .card__button:hover {
+.btn-close:hover, .remove-catalog:hover, .add-catalog button:hover, .card__button:hover {
   font-size: 1.5em;
   background-color: #1878CC;
 }
-.add-catalog button:active, .card__button:active {
+.btn-close:active, .remove-catalog:active, .add-catalog button:active, .card__button:active {
   transition: all 0.2s;
   background-color: #0C3C66;
 }
@@ -81,27 +86,32 @@ main {
   transition: all 0.5s;
 }
 .card-catalog:hover {
-  transform: scale(1.07);
+  transform: scale(1.1);
 }
 .card-catalog:hover img {
   opacity: 1;
+}
+.card-catalog:hover button {
+  display: block;
 }
 .card-catalog img {
   width: 100%;
   height: 100%;
   border-radius: 0.7rem;
   box-shadow: 0.2em -0.2em 1em 0.5em #082640;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: all 0.5s;
 }
 
 .card__button {
   width: 80%;
   height: 18%;
+  display: none;
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 .card__button:hover {
   transform: translate(-50%, -50%) scale(1.1);
@@ -147,11 +157,116 @@ main {
   font-size: 1.3em;
 }
 
+.background--visible {
+  background-color: #051524;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: overlay;
+}
+
 footer {
   border-radius: 0.7rem 0.7rem 0 0;
 }
 footer h1 {
   font-size: 2rem;
+}
+
+.extend-catalog {
+  background-color: rgba(5, 21, 36, 0.7);
+  width: 95vw;
+  height: max-content;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 2em 0;
+  border-radius: 2rem;
+  box-shadow: 0.2em -0.2em 2em 0.5em #1878CC;
+  text-shadow: 0.15em 0.15em 0.5em #051524;
+  z-index: 1;
+}
+.extend-catalog section {
+  color: #e1ebf5;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: space-around;
+  font-family: "Courier Prime", monospace;
+  font-weight: 300;
+}
+
+.info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 2em;
+}
+
+.overview {
+  height: max-content;
+  margin: 1em 0 2em 1em;
+}
+.overview h2 {
+  font-size: 2em;
+  margin: 1em;
+}
+.overview p {
+  text-align: justify;
+  font-size: 1.2em;
+  text-indent: 1.5em;
+  margin-left: 2em;
+}
+
+.description {
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em 0 0 2em;
+}
+.description h3 {
+  font-size: 1.1em;
+}
+.description li {
+  margin: 0.5em 1.5em;
+  list-style-type: none;
+}
+.description p {
+  font-size: 1em;
+}
+
+.poster {
+  width: 21rem;
+  height: max-content;
+  border-radius: 2rem;
+  margin: 5rem 1em auto;
+}
+
+.remove-catalog {
+  width: 25em;
+  height: 2.5em;
+  margin: 2.5rem auto;
+  font-size: 1.2em;
+}
+.remove-catalog:hover {
+  font-size: 1.2em;
+  transform: scale(1.1);
+}
+
+.btn-close {
+  background-image: url(../img/close.png);
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.btn-close:hover {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */
