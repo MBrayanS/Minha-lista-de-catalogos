@@ -7,3 +7,7 @@
 body {
     background-color: $color-pattern;
 }
+
+.body--scroll-disable {
+    overflow: hidden;
+}

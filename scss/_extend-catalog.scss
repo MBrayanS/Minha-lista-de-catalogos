@@ -1,0 +1,104 @@
+.extend-catalog {
+    background-color: rgba($color-black,.7) ;
+    width: 95vw;
+    height: max-content;
+    position: relative; 
+    left: 50%;
+    transform: translate(-50%);
+    margin: 2em 0;
+    border-radius: 2rem;
+    box-shadow: .2em -.2em 2em .5em $color-tertiary;
+    text-shadow: .15em .15em .5em $color-black;
+    z-index: 1;
+    
+    section {
+        color: $color-white;
+        width: 100%;
+        height: max-content;
+        display: flex;
+        justify-content: space-around;
+        font-family: $font-secondary;
+        font-weight: 300;
+    }
+}
+
+.info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 2em ;
+}
+
+.overview {
+    height: max-content;
+    margin: 1em 0 2em 1em;
+    
+    h2 {
+        font-size: 2em;
+        margin: 1em;
+    }
+    
+    p { 
+        text-align: justify;
+        font-size: 1.2em;
+        text-indent: 1.5em;
+        margin-left :2em;
+    }
+}
+
+.description {
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em 0 0 2em;
+
+    h3 {
+        font-size: 1.1em;
+    }
+    
+    li {
+        margin: .5em 1.5em;
+        list-style-type: none;
+    }
+        
+    p {
+        font-size: 1em;
+    }
+}
+
+.poster {
+    width: 21rem;
+    height: max-content;
+    border-radius: 2rem;
+    margin: 5rem 1em auto;
+}
+
+.remove-catalog {
+    @extend %button-pattern;
+    width: 25em;
+    height: 2.5em;
+    margin: 2.5rem auto;
+    font-size: 1.2em;
+
+    &:hover {
+        font-size: 1.2em;
+        transform: scale(1.1)
+    }
+}
+
+.btn-close{
+    @extend %button-pattern;
+    background-image: url(../img/close.png);
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    &:hover {
+        transform: scale(1.1)
+    }
+}
