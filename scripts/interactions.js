@@ -1,5 +1,5 @@
 import { databaseCatalogs } from "./database.js"
-import { expandCatalog } from "./expand-catalog.js"
+import { closeExpandCatalog, expandCatalog } from "./expand-catalog.js"
 
 export function cardButtonClickEvent( element ){
     element.click(({ target })=>{
@@ -7,4 +7,8 @@ export function cardButtonClickEvent( element ){
 
         expandCatalog(catalog)
     })
+}
+
+export function closeButtonClickEvent( element ){
+    element.click(() =>  closeExpandCatalog() )
 }
