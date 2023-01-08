@@ -25,7 +25,8 @@ main {
     transition: all .5s;
 
     &:hover {
-        transform: scale(1.07);
+        transform: scale(1.1);
+
         img {
             opacity: 1;
         }
@@ -40,7 +41,7 @@ main {
         height: 100%;
         border-radius: .7rem;
         box-shadow: .2em -.2em 1em .5em $color-shadow;
-        opacity: .7;
+        opacity: .8;
         transition: all .5s;
     }
 }
